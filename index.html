@@ -3,52 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lose weight fast as a busy mom with 4 free e-books! Backed by USDA and CDC data, get workouts, meal plans, mindset hacks, and postpartum tips.">
+  <meta name="description" content="Lose weight fast with 4 free e-books from Healthy Lose Steps! Backed by USDA, CDC, and PubMed, get workouts, meal plans, mindset hacks, and sustainable strategies.">
   
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Lose Weight FAST as a Busy Mom in 2025! 🥗 4 Free E-books">
-  <meta property="og:description" content="Transform your body with 4 free e-books, backed by science. Workouts, meal plans, mindset hacks, and postpartum tips for busy moms!">
-  <meta property="og:image" content="https://yourdomain.com/images/weightloss-moms-preview.png">
+  <meta property="og:title" content="Lose Weight FAST in 2025! 🥗 4 Free E-books | Healthy Lose Steps">
+  <meta property="og:description" content="Transform your body with 4 free e-books from Healthy Lose Steps, backed by science. Workouts, meal plans, mindset hacks, and sustainable weight loss strategies!">
+  <meta property="og:image" content="http://healthylosesteps.com/images/weightloss-preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:url" content="http://healthylosesteps.com">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MomFit Free">
+  <meta property="og:site_name" content="Healthy Lose Steps">
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lose Weight FAST as a Busy Mom in 2025! 🥗 4 Free E-books">
-  <meta name="twitter:description" content="Transform your body with 4 free e-books, backed by science. Workouts, meal plans, mindset hacks, and postpartum tips for busy moms!">
-  <meta property="og:image" content="https://yourdomain.com/images/weightloss-moms-preview.png">
-  <meta name="twitter:site" content="@YourTwitterHandle">
+  <meta name="twitter:title" content="Lose Weight FAST in 2025! 🥗 4 Free E-books | Healthy Lose Steps">
+  <meta name="twitter:description" content="Transform your body with 4 free e-books from Healthy Lose Steps, backed by science. Workouts, meal plans, mindset hacks, and sustainable weight loss strategies!">
+  <meta name="twitter:image" content="http://healthylosesteps.com/images/weightloss-preview.png">
+  <meta name="twitter:site" content="@HealthyLoseSteps">
 
-  <title>Lose Weight Fast as a Busy Mom | 4 Free E-books</title>
+  <title>Lose Weight Fast | 4 Free E-books | Healthy Lose Steps</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <!-- Tawk.to Chat Widget -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/YOUR_TAWK_PROPERTY_ID/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #d4edda 0%, #fce4ec 100%);
+      background: linear-gradient(135deg, #e1f5e9 0%, #fce4ec 100%);
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .hero-video {
-      position: absolute;
+    .background-art {
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      filter: brightness(0.7);
+      background: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      opacity: 0.15;
+      z-index: -1;
+      filter: blur(5px);
+    }
+
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(225, 245, 233, 0.5), rgba(252, 228, 236, 0.5));
+      z-index: -1;
     }
 
     .ebook-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
 
     .ebook-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .ebook-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, rgba(255, 138, 128, 0.2), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .ebook-card:hover::before {
+      opacity: 1;
+    }
+
+    .ebook-card img {
+      border: 2px solid #ff8a80;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .sticky-cta {
@@ -82,48 +135,94 @@
       height: auto;
     }
 
-    .calculator input, .calculator button {
-      border-radius: 8px;
+    .testimonial-card {
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 138, 128, 0.1));
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .stars {
+      color: #ff8a80;
+      font-size: 1.25rem;
     }
   </style>
 </head>
 <body>
+  <!-- Artistic Background -->
+  <div class="background-art"></div>
+  <div class="background-overlay"></div>
+
   <!-- Header -->
   <header class="bg-white bg-opacity-10 backdrop-blur-md py-4 px-6 fixed w-full z-20">
     <div class="container mx-auto flex justify-between items-center">
-      <div class="text-2xl font-bold text-green-800">MomFit <span class="text-pink-500">Free</span></div>
+      <div class="text-2xl font-bold text-green-800">Healthy Lose <span class="text-pink-500">Steps</span></div>
     </div>
   </header>
 
-  <!-- Hero Section with Video -->
+  <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center text-center px-4">
-    <video class="hero-video" autoplay muted loop>
-      <source src="https://example.com/momfit-hero-video.mp4" type="video/mp4">
-    </video>
     <div class="relative z-10">
       <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">
-        Lose Weight <span class="text-pink-500">FAST</span> as a Busy Mom! 🥗
+        Lose Weight <span class="text-pink-500">FAST</span> in 2025! 🥗
       </h1>
       <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
-        Transform your body with 4 FREE e-books, backed by USDA and CDC data. Workouts, meal plans, mindset hacks, and postpartum tips!
+        Get 4 FREE e-books from Healthy Lose Steps, backed by USDA, CDC, and PubMed. Workouts, meal plans, mindset hacks, and sustainable strategies!
       </p>
       <a href="YOUR_OGADS_LOCKER_URL" class="bg-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
       <div class="countdown mt-6" id="countdown">Offer Ends in: 24:00:00</div>
     </div>
   </section>
 
-  <!-- Why It Works Section with Data -->
+  <!-- E-books Section -->
   <section class="py-16 px-4 bg-white bg-opacity-5">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Your 4 Free E-books</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="pdf1.jpg" alt="E-book 1 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">10-Minute Workouts</h3>
+          <p class="text-gray-600 mb-4">Burn fat with HIIT, backed by PubMed studies (25–30% more effective than cardio).</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="http://healthylosesteps.com/images/ebook-mealprep.png" alt="E-book 2 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Meal Prep Magic</h3>
+          <p class="text-gray-600 mb-4">USDA-based recipes with calorie counts to fuel your weight loss journey.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="http://healthylosesteps.com/images/ebook-mindset.png" alt="E-book 3 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Mindset Mastery</h3>
+          <p class="text-gray-600 mb-4">Cognitive hacks to stay motivated, inspired by behavioral research.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="http://healthylosesteps.com/images/ebook-sustainable.png" alt="E-book 4 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Sustainable Weight Loss</h3>
+          <p class="text-gray-600 mb-4">Long-term strategies, aligned with CDC guidelines for lasting results.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Works Section with Data -->
+  <section class="py-16 px-4">
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold text-green-800 mb-12">Why Our E-books Work</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div>
-          <h3 class="text-xl font-semibold text-green-800 mb-4">Backed by Science</h3>
-          <p class="text-gray-600">80% of moms struggle with post-pregnancy weight (CDC, 2023). Our e-books use USDA nutrition data and PubMed studies to deliver proven strategies.</p>
+          <h3 class="text-xl font-semibold text-green-800 mb-4">Science-Backed</h3>
+          <p class="text-gray-600">Over 1.9 billion adults are overweight (WHO, 2024). Our e-books use USDA nutrition data and PubMed studies for proven results.</p>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-green-800 mb-4">Real Results</h3>
-          <p class="text-gray-600">85% of users report progress in 4 weeks (based on user feedback). Start your journey with confidence!</p>
+          <p class="text-gray-600">85% of users report progress in 4 weeks (user feedback). Start your journey today!</p>
         </div>
       </div>
       <div class="mt-8">
@@ -136,94 +235,45 @@
     </div>
   </section>
 
-  <!-- E-books Section -->
-  <section class="py-16 px-4">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Your 4 Free E-books</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="https://placehold.co/200x300?text=10-Minute+Workouts" alt="E-book 1 Cover" class="mx-auto mb-4 rounded">
-          <h3 class="text-xl font-semibold text-green-800 mb-2">10-Minute Mom Workouts</h3>
-          <p class="text-gray-600 mb-4">Burn fat with HIIT, backed by PubMed studies (25–30% more effective than cardio).</p>
-          <span class="text-2xl font-bold text-pink-500">Free</span>
-        </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="https://placehold.co/200x300?text=Meal+Prep+Magic" alt="E-book 2 Cover" class="mx-auto mb-4 rounded">
-          <h3 class="text-xl font-semibold text-green-800 mb-2">Meal Prep Magic</h3>
-          <p class="text-gray-600 mb-4">USDA-based recipes with calorie counts to fuel your weight loss.</p>
-          <span class="text-2xl font-bold text-pink-500">Free</span>
-        </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="https://placehold.co/200x300?text=Mindset+Hacks" alt="E-book 3 Cover" class="mx-auto mb-4 rounded">
-          <h3 class="text-xl font-semibold text-green-800 mb-2">Stress-Free Weight Loss</h3>
-          <p class="text-gray-600 mb-4">Mindset hacks to stay motivated, inspired by cognitive behavioral research.</p>
-          <span class="text-2xl font-bold text-pink-500">Free</span>
-        </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="https://placehold.co/200x300?text=Post-Pregnancy" alt="E-book 4 Cover" class="mx-auto mb-4 rounded">
-          <h3 class="text-xl font-semibold text-green-800 mb-2">Post-Pregnancy Comeback</h3>
-          <p class="text-gray-600 mb-4">Safe postpartum tips, aligned with CDC guidelines for new moms.</p>
-          <span class="text-2xl font-bold text-pink-500">Free</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calorie Calculator -->
-  <section class="py-16 px-4 bg-white bg-opacity-5">
-    <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-green-800 mb-12">Calculate Your Calorie Needs</h2>
-      <div class="calculator max-w-md mx-auto bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl">
-        <input type="number" id="weight" placeholder="Weight (lbs)" class="w-full p-3 mb-4 border border-gray-300">
-        <input type="number" id="height" placeholder="Height (inches)" class="w-full p-3 mb-4 border border-gray-300">
-        <input type="number" id="age" placeholder="Age" class="w-full p-3 mb-4 border border-gray-300">
-        <select id="activity" class="w-full p-3 mb-4 border border-gray-300">
-          <option value="1.2">Sedentary</option>
-          <option value="1.375">Lightly Active</option>
-          <option value="1.55">Moderately Active</option>
-          <option value="1.725">Very Active</option>
-        </select>
-        <button onclick="calculateCalories()" class="bg-pink-500 text-white py-3 px-6 rounded-full w-full hover:bg-pink-600 transition">Calculate</button>
-        <p id="result" class="text-lg text-gray-600 mt-4"></p>
-      </div>
-    </div>
-  </section>
-
   <!-- Testimonials -->
-  <section class="py-16 px-4">
+  <section class="py-16 px-4 bg-white bg-opacity-5">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">What Moms Are Saying</h2>
+      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">What People Are Saying</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
-          <p class="text-gray-600 mb-4">“I lost 12 lbs in 6 weeks with these e-books!”</p>
-          <span class="font-semibold text-green-800">– Jessica, Mom of 2</span>
+        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
+          <div class="stars mb-2">★★★★★</div>
+          <p class="text-gray-600 text-lg mb-4">“These e-books transformed my routine! Lost 10 lbs in just a month with the workouts and meal plans.”</p>
+          <span class="font-semibold text-green-800 text-xl">– Alex, 34</span>
         </div>
-        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
-          <p class="text-gray-600 mb-4">“The meal plans are so easy, even with my schedule.”</p>
-          <span class="font-semibold text-green-800">– Emily, Working Mom</span>
+        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
+          <div class="stars mb-2">★★★★★</div>
+          <p class="text-gray-600 text-lg mb-4">“Meal Prep Magic is a game-changer. So easy to follow, even with a busy schedule!”</p>
+          <span class="font-semibold text-green-800 text-xl">– Jamie, 28</span>
         </div>
-        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
-          <p class="text-gray-600 mb-4">“The mindset hacks kept me motivated!”</p>
-          <span class="font-semibold text-green-800">– Sarah, Stay-at-Home Mom</span>
+        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
+          <div class="stars mb-2">★★★★★</div>
+          <p class="text-gray-600 text-lg mb-4">“Mindset Mastery kept me motivated. I’m finally sticking to my goals!”</p>
+          <span class="font-semibold text-green-800 text-xl">– Taylor, 41</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust Signals -->
-  <section class="py-16 px-4 bg-white bg-opacity-5">
+  <!-- Trust Signals with Lottie Animation -->
+  <section class="py-16 px-4">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-green-800 mb-12">Trusted by Moms & Experts</h2>
-      <div class="flex flex-wrap justify-center gap-8">
+      <h2 class="text-3xl font-bold text-green-800 mb-12">Trusted by Thousands</h2>
+      <div class="flex flex-wrap justify-center gap-8 mb-8">
         <div class="flex items-center">
           <img src="https://img.icons8.com/?size=100&id=11272&format=png&color=2e7d32" alt="Certified" class="w-16 mr-4">
-          <p class="text-lg text-gray-600">Endorsed by Nutritionists</p>
+          <p class="text-lg text-gray-600">Backed by Science</p>
         </div>
         <div class="flex items-center">
           <img src="https://img.icons8.com/?size=100&id=11031&format=png&color=2e7d32" alt="Satisfaction" class="w-16 mr-4">
           <p class="text-lg text-gray-600">100% Satisfaction Guarantee</p>
         </div>
       </div>
+      <lottie-player src="https://assets.lottiefiles.com/packages/lf20_8qtr0jvz.json" background="transparent" speed="1" style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
     </div>
   </section>
 
@@ -246,7 +296,7 @@
         </div>
         <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
           <h3 class="text-lg font-semibold text-green-800">What’s in the e-books?</h3>
-          <p class="text-gray-600 mt-2 hidden">Science-backed workouts, meal plans, mindset hacks, and postpartum tips for busy moms!</p>
+          <p class="text-gray-600 mt-2 hidden">Science-backed workouts, meal plans, mindset hacks, and sustainable weight loss strategies!</p>
         </div>
       </div>
     </div>
@@ -257,7 +307,7 @@
 
   <!-- Footer -->
   <footer class="bg-green-800 text-white py-8 text-center">
-    <p>© 2025 MomFit Free. All rights reserved. Not medical advice; consult a doctor before starting any weight loss plan. Data sourced from USDA, CDC, and PubMed.</p>
+    <p>© 2025 Healthy Lose Steps. All rights reserved. Not medical advice; consult a doctor before starting any weight loss plan. Data sourced from USDA, CDC, and PubMed.</p>
   </footer>
 
   <script>
@@ -286,27 +336,12 @@
     }
     startCountdown();
 
-    // Calorie Calculator
-    function calculateCalories() {
-      const weight = parseFloat(document.getElementById('weight').value);
-      const height = parseFloat(document.getElementById('height').value);
-      const age = parseFloat(document.getElementById('age').value);
-      const activity = parseFloat(document.getElementById('activity').value);
-      if (weight && height && age) {
-        // Mifflin-St Jeor Equation for women
-        const bmr = 10 * (weight / 2.20462) + 6.25 * (height * 2.54) - 5 * age - 161;
-        const calories = bmr * activity;
-        document.getElementById('result').textContent = `Your daily calorie needs: ${Math.round(calories)} kcal`;
-      } else {
-        document.getElementById('result').textContent = 'Please fill in all fields.';
-      }
-    }
-
     // GSAP Animations
     gsap.from('.hero h1', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
     gsap.from('.hero p', { opacity: 0, y: 50, duration: 1, delay: 0.7 });
     gsap.from('.hero a', { opacity: 0, scale: 0.8, duration: 1, delay: 0.9 });
     gsap.from('.ebook-card', { opacity: 0, y: 50, duration: 1, stagger: 0.2, delay: 1 });
+    gsap.from('.testimonial-card', { opacity: 0, y: 50, duration: 1, stagger: 0.2, delay: 1.2 });
     gsap.from('.infographic-svg', { opacity: 0, scale: 0.8, duration: 1, delay: 1.5 });
   </script>
 </body>
