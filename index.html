@@ -23,7 +23,7 @@
   <meta name="twitter:site" content="@HealthyLoseSteps">
 
   <title>Lose Weight Fast | 4 Free E-books | Healthy Lose Steps</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
@@ -53,31 +53,57 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      opacity: 0.15;
+      background: url('https://images.unsplash.com/photo-1552196563-55cd4e45efb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      opacity: 0.4;
       z-index: -1;
-      filter: blur(5px);
+      filter: contrast(1.2) saturate(1.3);
     }
 
-    .background-overlay {
+    .watercolor-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(rgba(225, 245, 233, 0.5), rgba(252, 228, 236, 0.5));
+      background: url('https://www.pexels.com/photo/2846814/download/') center/cover no-repeat;
+      opacity: 0.3;
+      z-index: -1;
+      mix-blend-mode: overlay;
+    }
+
+    .grain-filter {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/noise.png');
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .animated-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       z-index: -1;
     }
 
     .ebook-card {
+      background: rgba(255, 255, 255, 0.9);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       overflow: hidden;
+      border: 2px solid #ff8a80;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
     }
 
     .ebook-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
     }
 
     .ebook-card::before {
@@ -87,7 +113,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at top left, rgba(255, 138, 128, 0.2), transparent);
+      background: radial-gradient(circle at center, rgba(255, 138, 128, 0.3), transparent);
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: -1;
@@ -98,10 +124,11 @@
     }
 
     .ebook-card img {
-      border: 2px solid #ff8a80;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 3px solid #ff8a80;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       position: relative;
       z-index: 1;
+      border-radius: 8px;
     }
 
     .sticky-cta {
@@ -109,6 +136,7 @@
       bottom: 20px;
       right: 20px;
       z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     .progress-bar {
@@ -136,29 +164,48 @@
     }
 
     .testimonial-card {
-      transform: scale(1);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 138, 128, 0.2));
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 138, 128, 0.1));
+      border: 2px solid #ff8a80;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
     }
 
     .testimonial-card:hover {
       transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
     }
 
     .stars {
       color: #ff8a80;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.125rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
   </style>
 </head>
 <body>
   <!-- Artistic Background -->
   <div class="background-art"></div>
-  <div class="background-overlay"></div>
+  <div class="watercolor-overlay"></div>
+  <div class="grain-filter"></div>
+  <svg class="animated-shapes" viewBox="0 0 100 100" preserveAspectRatio="none">
+    <path id="shape1" d="M0,50 Q25,30 50,50 T100,50" fill="none" stroke="#ff8a80" stroke-width="0.5" opacity="0.3"/>
+    <path id="shape2" d="M0,60 Q30,40 50,60 T100,60" fill="none" stroke="#e1f5e9" stroke-width="0.5" opacity="0.3"/>
+  </svg>
 
   <!-- Header -->
-  <header class="bg-white bg-opacity-10 backdrop-blur-md py-4 px-6 fixed w-full z-20">
+  <header class="bg-white bg-opacity-20 backdrop-blur-md py-4 px-6 fixed w-full z-20">
     <div class="container mx-auto flex justify-between items-center">
       <div class="text-2xl font-bold text-green-800">Healthy Lose <span class="text-pink-500">Steps</span></div>
     </div>
@@ -167,44 +214,44 @@
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center text-center px-4">
     <div class="relative z-10">
-      <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+      <h1 class="text-4xl md:text-6xl font-bold text-green-800 mb-4">
         Lose Weight <span class="text-pink-500">FAST</span> in 2025! 🥗
       </h1>
       <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
-        Get 4 FREE e-books from Healthy Lose Steps, backed by USDA, CDC, and PubMed. Workouts, meal plans, mindset hacks, and sustainable strategies!
+        Discover 4 FREE e-books from Healthy Lose Steps, powered by USDA, CDC, and PubMed. Workouts, meal plans, mindset hacks, and sustainable strategies!
       </p>
-      <a href="YOUR_OGADS_LOCKER_URL" class="bg-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
+      <a href="YOUR_OGADS_LOCKER_URL" class="bg-pink-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
       <div class="countdown mt-6" id="countdown">Offer Ends in: 24:00:00</div>
     </div>
   </section>
 
   <!-- E-books Section -->
-  <section class="py-16 px-4 bg-white bg-opacity-5">
+  <section class="py-16 px-4 bg-white bg-opacity-10">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Your 4 Free E-books</h2>
+      <h2 class="text-4xl font-bold text-green-800 text-center mb-12">Your 4 Free E-books</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="pdf1.jpg" alt="E-book 1 Cover" class="mx-auto mb-4 rounded">
+        <div class="ebook-card p-6 text-center">
+          <img src="pdf1.jpg" alt="E-book 1 Cover" class="mx-auto mb-4">
           <h3 class="text-xl font-semibold text-green-800 mb-2">10-Minute Workouts</h3>
-          <p class="text-gray-600 mb-4">Burn fat with HIIT, backed by PubMed studies (25–30% more effective than cardio).</p>
+          <p class="text-gray-600 mb-4">High-intensity interval training to torch fat, backed by PubMed (25–30% more effective than cardio).</p>
           <span class="text-2xl font-bold text-pink-500">Free</span>
         </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="http://healthylosesteps.com/images/ebook-mealprep.png" alt="E-book 2 Cover" class="mx-auto mb-4 rounded">
+        <div class="ebook-card p-6 text-center">
+          <img src="pdf1.jpg" alt="E-book 2 Cover" class="mx-auto mb-4">
           <h3 class="text-xl font-semibold text-green-800 mb-2">Meal Prep Magic</h3>
-          <p class="text-gray-600 mb-4">USDA-based recipes with calorie counts to fuel your weight loss journey.</p>
+          <p class="text-gray-600 mb-4">USDA-approved recipes with precise calorie counts to fuel your transformation.</p>
           <span class="text-2xl font-bold text-pink-500">Free</span>
         </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="http://healthylosesteps.com/images/ebook-mindset.png" alt="E-book 3 Cover" class="mx-auto mb-4 rounded">
+        <div class="ebook-card p-6 text-center">
+          <img src="pdf1.jpg" alt="E-book 3 Cover" class="mx-auto mb-4">
           <h3 class="text-xl font-semibold text-green-800 mb-2">Mindset Mastery</h3>
-          <p class="text-gray-600 mb-4">Cognitive hacks to stay motivated, inspired by behavioral research.</p>
+          <p class="text-gray-600 mb-4">Cognitive strategies to stay motivated, grounded in behavioral science.</p>
           <span class="text-2xl font-bold text-pink-500">Free</span>
         </div>
-        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
-          <img src="http://healthylosesteps.com/images/ebook-sustainable.png" alt="E-book 4 Cover" class="mx-auto mb-4 rounded">
+        <div class="ebook-card p-6 text-center">
+          <img src="pdf1.jpg" alt="E-book 4 Cover" class="mx-auto mb-4">
           <h3 class="text-xl font-semibold text-green-800 mb-2">Sustainable Weight Loss</h3>
-          <p class="text-gray-600 mb-4">Long-term strategies, aligned with CDC guidelines for lasting results.</p>
+          <p class="text-gray-600 mb-4">CDC-aligned strategies for lasting results and a healthier you.</p>
           <span class="text-2xl font-bold text-pink-500">Free</span>
         </div>
       </div>
@@ -214,11 +261,11 @@
   <!-- Why It Works Section with Data -->
   <section class="py-16 px-4">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-green-800 mb-12">Why Our E-books Work</h2>
+      <h2 class="text-4xl font-bold text-green-800 mb-12">Why Our E-books Work</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div>
           <h3 class="text-xl font-semibold text-green-800 mb-4">Science-Backed</h3>
-          <p class="text-gray-600">Over 1.9 billion adults are overweight (WHO, 2024). Our e-books use USDA nutrition data and PubMed studies for proven results.</p>
+          <p class="text-gray-600">Over 1.9 billion adults are overweight (WHO, 2024). Our e-books leverage USDA nutrition data and PubMed studies for proven results.</p>
         </div>
         <div>
           <h3 class="text-xl font-semibold text-green-800 mb-4">Real Results</h3>
@@ -236,23 +283,23 @@
   </section>
 
   <!-- Testimonials -->
-  <section class="py-16 px-4 bg-white bg-opacity-5">
+  <section class="py-16 px-4 bg-white bg-opacity-10">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">What People Are Saying</h2>
+      <h2 class="text-4xl font-bold text-green-800 text-center mb-12">What People Are Saying</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
-          <div class="stars mb-2">★★★★★</div>
-          <p class="text-gray-600 text-lg mb-4">“These e-books transformed my routine! Lost 10 lbs in just a month with the workouts and meal plans.”</p>
+        <div class="testimonial-card p-8 text-center">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-quote text-gray-600 mb-4">“These e-books transformed my routine! Lost 10 lbs in a month with the workouts and meal plans.”</p>
           <span class="font-semibold text-green-800 text-xl">– Alex, 34</span>
         </div>
-        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
-          <div class="stars mb-2">★★★★★</div>
-          <p class="text-gray-600 text-lg mb-4">“Meal Prep Magic is a game-changer. So easy to follow, even with a busy schedule!”</p>
+        <div class="testimonial-card p-8 text-center">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-quote text-gray-600 mb-4">“Meal Prep Magic is a game-changer. So easy to follow, even with a busy schedule!”</p>
           <span class="font-semibold text-green-800 text-xl">– Jamie, 28</span>
         </div>
-        <div class="testimonial-card bg-white bg-opacity-20 backdrop-blur-md p-8 rounded-2xl text-center border border-pink-300">
-          <div class="stars mb-2">★★★★★</div>
-          <p class="text-gray-600 text-lg mb-4">“Mindset Mastery kept me motivated. I’m finally sticking to my goals!”</p>
+        <div class="testimonial-card p-8 text-center">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-quote text-gray-600 mb-4">“Mindset Mastery kept me motivated. I’m finally sticking to my goals!”</p>
           <span class="font-semibold text-green-800 text-xl">– Taylor, 41</span>
         </div>
       </div>
@@ -262,7 +309,7 @@
   <!-- Trust Signals with Lottie Animation -->
   <section class="py-16 px-4">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold text-green-800 mb-12">Trusted by Thousands</h2>
+      <h2 class="text-4xl font-bold text-green-800 mb-12">Trusted by Thousands</h2>
       <div class="flex flex-wrap justify-center gap-8 mb-8">
         <div class="flex items-center">
           <img src="https://img.icons8.com/?size=100&id=11272&format=png&color=2e7d32" alt="Certified" class="w-16 mr-4">
@@ -273,28 +320,28 @@
           <p class="text-lg text-gray-600">100% Satisfaction Guarantee</p>
         </div>
       </div>
-      <lottie-player src="https://assets.lottiefiles.com/packages/lf20_8qtr0jvz.json" background="transparent" speed="1" style="width: 200px; height: 200px; margin: 0 auto;" loop autoplay></lottie-player>
+      <lottie-player src="https://assets.lottiefiles.com/packages/lf20_k86amzbi.json" background="transparent" speed="1" style="width: 250px; height: 250px; margin: 0 auto;" loop autoplay></lottie-player>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="py-16 px-4">
     <div class="container mx-auto max-w-3xl">
-      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
+      <h2 class="text-4xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
       <div class="space-y-4">
-        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+        <div class="faq-item bg-white bg-opacity-20 backdrop-blur-md p-6 rounded-lg cursor-pointer">
           <h3 class="text-lg font-semibold text-green-800">How do I get the e-books?</h3>
           <p class="text-gray-600 mt-2 hidden">Click “Get Free E-books” and complete 2–3 quick steps (e.g., app installs, free trial sign-ups). Instant access!</p>
         </div>
-        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+        <div class="faq-item bg-white bg-opacity-20 backdrop-blur-md p-6 rounded-lg cursor-pointer">
           <h3 class="text-lg font-semibold text-green-800">Are these really free?</h3>
           <p class="text-gray-600 mt-2 hidden">Yes! No costs or subscriptions. Just complete the steps.</p>
         </div>
-        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+        <div class="faq-item bg-white bg-opacity-20 backdrop-blur-md p-6 rounded-lg cursor-pointer">
           <h3 class="text-lg font-semibold text-green-800">Is my information safe?</h3>
           <p class="text-gray-600 mt-2 hidden">Absolutely. Trusted platforms protect your data.</p>
         </div>
-        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+        <div class="faq-item bg-white bg-opacity-20 backdrop-blur-md p-6 rounded-lg cursor-pointer">
           <h3 class="text-lg font-semibold text-green-800">What’s in the e-books?</h3>
           <p class="text-gray-600 mt-2 hidden">Science-backed workouts, meal plans, mindset hacks, and sustainable weight loss strategies!</p>
         </div>
@@ -303,7 +350,7 @@
   </section>
 
   <!-- Sticky CTA -->
-  <a href="YOUR_OGADS_LOCKER_URL" class="sticky-cta bg-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
+  <a href="YOUR_OGADS_LOCKER_URL" class="sticky-cta bg-pink-500 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
 
   <!-- Footer -->
   <footer class="bg-green-800 text-white py-8 text-center">
@@ -335,6 +382,22 @@
       }, 1000);
     }
     startCountdown();
+
+    // Animate SVG Shapes
+    gsap.to('#shape1', {
+      attr: { d: 'M0,50 Q25,70 50,50 T100,50' },
+      duration: 5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+    gsap.to('#shape2', {
+      attr: { d: 'M0,60 Q30,20 50,60 T100,60' },
+      duration: 6,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
 
     // GSAP Animations
     gsap.from('.hero h1', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
