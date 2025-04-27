@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lose weight fast as a busy mom with our four free e-books! Discover workouts, meal plans, mindset hacks, and postpartum tips tailored for you.">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Lose Weight FAST as a Busy Mom in 2025! 🥗 4 Free E-books">
+  <meta property="og:description" content="Get four free e-books with mom-friendly weight loss tips, meal plans, workouts, and postpartum strategies. No gym, no stress—just results!">
+  <meta property="og:image" content="https://yourdomain.com/images/weightloss-moms-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MomFit Free">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lose Weight FAST as a Busy Mom in 2025! 🥗 4 Free E-books">
+  <meta name="twitter:description" content="Get four free e-books with mom-friendly weight loss tips, meal plans, workouts, and postpartum strategies. No gym, no stress—just results!">
+  <meta name="twitter:image" content="https://yourdomain.com/images/weightloss-moms-preview.png">
+  <meta name="twitter:site" content="@YourTwitterHandle">
+
+  <title>Lose Weight Fast as a Busy Mom | 4 Free E-books</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #d4edda 0%, #fce4ec 100%);
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+    }
+
+    .ebook-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ebook-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .progress-bar {
+      height: 10px;
+      border-radius: 5px;
+      background: #e0e0e0;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: #ff8a80;
+      transition: width 2s ease-in-out;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-white bg-opacity-10 backdrop-blur-md py-4 px-6 fixed w-full z-20">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-2xl font-bold text-green-800">MomFit <span class="text-pink-500">Free</span></div>
+    </div>
+  </header>
+
+  <!-- Hero Section with Video -->
+  <section class="relative min-h-screen flex items-center justify-center text-center px-4">
+    <video class="hero-video" autoplay muted loop>
+      <source src="https://example.com/momfit-hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="relative z-10">
+      <h1 class="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+        Lose Weight <span class="text-pink-500">FAST</span> as a Busy Mom! 🥗
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-6 max-w-2xl mx-auto">
+        Get 4 FREE e-books with workouts, meal plans, mindset hacks, and postpartum tips designed for your hectic schedule.
+      </p>
+      <a href="YOUR_OGADS_LOCKER_URL" class="bg-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
+      <div class="countdown mt-6" id="countdown">Offer Ends in: 24:00:00</div>
+    </div>
+  </section>
+
+  <!-- E-books Section -->
+  <section class="py-16 px-4 bg-white bg-opacity-5">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Your 4 Free E-books</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- E-book 1 -->
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="https://placehold.co/200x300?text=10-Minute+Workouts" alt="E-book 1 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">10-Minute Mom Workouts</h3>
+          <p class="text-gray-600 mb-4">Quick, equipment-free workouts to burn fat while the kids nap.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <!-- E-book 2 -->
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="https://placehold.co/200x300?text=Meal+Prep+Magic" alt="E-book 2 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Meal Prep Magic</h3>
+          <p class="text-gray-600 mb-4">Easy, budget-friendly meal plans to fuel your weight loss.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <!-- E-book 3 -->
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="https://placehold.co/200x300?text=Mindset+Hacks" alt="E-book 3 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Stress-Free Weight Loss</h3>
+          <p class="text-gray-600 mb-4">Mindset hacks to stay motivated on chaotic mom days.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+        <!-- E-book 4 -->
+        <div class="ebook-card bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-2xl text-center">
+          <img src="https://placehold.co/200x300?text=Post-Pregnancy" alt="E-book 4 Cover" class="mx-auto mb-4 rounded">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">Post-Pregnancy Comeback</h3>
+          <p class="text-gray-600 mb-4">Safe tips to lose baby weight and regain confidence.</p>
+          <span class="text-2xl font-bold text-pink-500">Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Progress Bars -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-800 mb-12">Proven Results for Busy Moms</h2>
+      <div class="max-w-2xl mx-auto">
+        <div class="mb-6">
+          <p class="text-lg text-gray-600 mb-2">Weight Loss Success Rate</p>
+          <div class="progress-bar"><div class="progress-bar-fill" style="width: 92%;"></div></div>
+        </div>
+        <div>
+          <p class="text-lg text-gray-600 mb-2">User Satisfaction</p>
+          <div class="progress-bar"><div class="progress-bar-fill" style="width: 95%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 px-4 bg-white bg-opacity-5">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">What Moms Are Saying</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
+          <p class="text-gray-600 mb-4">“These e-books changed my life! I lost 12 lbs in 6 weeks!”</p>
+          <span class="font-semibold text-green-800">– Jessica, Mom of 2</span>
+        </div>
+        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
+          <p class="text-gray-600 mb-4">“The meal plans are so easy, even with my crazy schedule.”</p>
+          <span class="font-semibold text-green-800">– Emily, Working Mom</span>
+        </div>
+        <div class="bg-white bg-opacity-15 backdrop-blur-md p-6 rounded-2xl text-center">
+          <p class="text-gray-600 mb-4">“The mindset hacks kept me motivated. I feel amazing!”</p>
+          <span class="font-semibold text-green-800">– Sarah, Stay-at-Home Mom</span>
+        </div>
+      </div>
+    </div>
+  </section> 
+
+  <!-- Trust Signals -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold text-green-800 mb-12">Trusted by Moms & Experts</h2>
+      <div class="flex flex-wrap justify-center gap-8">
+        <div class="flex items-center">
+          <img src="https://img.icons8.com/?size=100&id=11272&format=png&color=2e7d32" alt="Certified" class="w-16 mr-4">
+          <p class="text-lg text-gray-600">Endorsed by Nutritionists</p>
+        </div>
+        <div class="flex items-center">
+          <img src="https://img.icons8.com/?size=100&id=11031&format=png&color=2e7d32" alt="Satisfaction" class="w-16 mr-4">
+          <p class="text-lg text-gray-600">100% Satisfaction Guarantee</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-4">
+    <div class="container mx-auto max-w-3xl">
+      <h2 class="text-3xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+          <h3 class="text-lg font-semibold text-green-800">How do I get the e-books?</h3>
+          <p class="text-gray-600 mt-2 hidden">Click “Get Free E-books” and complete 2–3 quick steps (e.g., app installs, free trial sign-ups). You’ll get instant access!</p>
+        </div>
+        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+          <h3 class="text-lg font-semibold text-green-800">Are these really free?</h3>
+          <p class="text-gray-600 mt-2 hidden">Yes! No costs or subscriptions. Just complete the steps to unlock.</p>
+        </div>
+        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+          <h3 class="text-lg font-semibold text-green-800">Is my information safe?</h3>
+          <p class="text-gray-600 mt-2 hidden">Absolutely. We use trusted platforms to protect your data.</p>
+        </div>
+        <div class="faq-item bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-lg cursor-pointer">
+          <h3 class="text-lg font-semibold text-green-800">What’s in the e-books?</h3>
+          <p class="text-gray-600 mt-2 hidden">Workouts, meal plans, mindset hacks, and postpartum tips tailored for busy moms!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky CTA -->
+  <a href="YOUR_OGADS_LOCKER_URL" class="sticky-cta bg-pink-500 text-white py-3 px-6 rounded-full text-lg font-semibold hover:bg-pink-600 transition">Get Free E-books</a>
+
+  <!-- Footer -->
+  <footer class="bg-green-800 text-white py-8 text-center">
+    <p>© 2025 MomFit Free. All rights reserved. Not medical advice; consult a doctor before starting any weight loss plan.</p>
+  </footer>
+
+  <script>
+    // FAQ Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+        const answer = item.querySelector('p');
+        answer.classList.toggle('hidden');
+      });
+    });
+
+    // Countdown Timer
+    function startCountdown() {
+      const countdownElement = document.getElementById('countdown');
+      let timeLeft = 24 * 60 * 60; // 24 hours in seconds
+      setInterval(() => {
+        if (timeLeft <= 0) timeLeft = 24 * 60 * 60;
+        const hours = Math.floor(timeLeft / 3600);
+        const minutes = Math.floor((timeLeft % 3600) / 60);
+        const seconds = timeLeft % 60;
+        countdownElement.textContent = `Offer Ends in: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        timeLeft--;
+      }, 1000);
+    }
+    startCountdown();
+
+    // GSAP Animations
+    gsap.from('.hero h1', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+    gsap.from('.hero p', { opacity: 0, y: 50, duration: 1, delay: 0.7 });
+    gsap.from('.hero a', { opacity: 0, scale: 0.8, duration: 1, delay: 0.9 });
+    gsap.from('.ebook-card', { opacity: 0, y: 50, duration: 1, stagger: 0.2, delay: 1 });
+  </script>
+</body>
+</html>
