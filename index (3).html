@@ -1,0 +1,202 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Loss E-Books</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap');
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #4caf50;
+            color: white;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .ebook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ebook-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .ebook-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ebook-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .ebook-card h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #4caf50;
+        }
+
+        .ebook-card p {
+            padding: 0 15px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .ebook-card .download-btn {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            margin: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .ebook-card .download-btn:hover {
+            background: #388e3c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #4caf50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .ebook-card img {
+                height: 150px;
+            }
+
+            .ebook-card h2 {
+                font-size: 1.2em;
+            }
+
+            .ebook-card p {
+                font-size: 0.85em;
+            }
+
+            .ebook-card .download-btn {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discover Your Weight Loss Journey</h1>
+    </header>
+
+    <div class="container">
+        <div class="ebook-grid">
+            <div class="ebook-card">
+                <img src="https://via.placeholder.com/300x200?text=E-Book+1" alt="E-Book 1">
+                <h2>Keto Kickstart Guide</h2>
+                <p>Learn the basics of the keto diet with delicious recipes and a 30-day meal plan.</p>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
+            <div class="ebook-card">
+                <img src="https://via.placeholder.com/300x200?text=E-Book+2" alt="E-Book 2">
+                <h2>Intermittent Fasting 101</h2>
+                <p>Master intermittent fasting with practical tips and schedules for weight loss.</p>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
+            <div class="ebook-card">
+                <img src="https://via.placeholder.com/300x200?text=E-Book+3" alt="E-Book 3">
+                <h2>Low-Carb Living</h2>
+                <p>Discover low-carb meals and snacks to stay healthy and energized.</p>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
+            <div class="ebook-card">
+                <img src="https://via.placeholder.com/300x200?text=E-Book+4" alt="E-Book 4">
+                <h2>Weight Loss Mindset</h2>
+                <p>Transform your mindset with strategies to stay motivated and achieve your goals.</p>
+                <a href="#" class="download-btn">Download Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Weight Loss E-Books. All rights reserved.</p>
+    </footer>
+</body>
+</html>
