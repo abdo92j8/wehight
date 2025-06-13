@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/680fca173aab2b190ea274bc/1ipuqqrlc';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/680fca173aab2b190ea274bc/1ipuqqrlc';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Lose weight fast with 4 free e-books from Healthy Lose Steps! Backed by USDA, CDC, and PubMed, get workouts, meal plans, mindset hacks, and sustainable strategies.">
@@ -46,24 +46,13 @@ s0.parentNode.insertBefore(s1,s0);
   <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  <!-- Tawk.to Chat Widget -->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/1ipuqrdki/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       background: linear-gradient(135deg, #e1f5e9 0%, #fce4ec 100%);
       overflow-x: hidden;
       position: relative;
+      padding-top: 80px;
     }
 
     .background-art {
@@ -116,6 +105,7 @@ s0.parentNode.insertBefore(s1,s0);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1rem 2rem;
       position: fixed;
+      top: 0;
       width: 100%;
       z-index: 1000;
       display: flex;
@@ -142,6 +132,57 @@ s0.parentNode.insertBefore(s1,s0);
 
     .nav-menu a:hover {
       color: #ff8a80;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 25px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .hamburger span {
+      width: 30px;
+      height: 3px;
+      background: #2e7d32;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 1rem;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .nav-menu a {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-bottom: 1px solid #e1f5e9;
+      }
+      .logo img {
+        height: 40px;
+      }
+      .free-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.125rem;
+      }
     }
 
     .ebook-card {
@@ -227,6 +268,11 @@ s0.parentNode.insertBefore(s1,s0);
     <div class="logo">
       <img src="logo1.png" alt="Healthy Lose Steps Logo" loading="eager">
     </div>
+    <button class="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <nav class="nav-menu" role="navigation" aria-label="Main navigation">
       <a href="#home" aria-label="Home">Home</a>
       <a href="#ebooks" aria-label="E-books">E-books</a>
@@ -267,10 +313,8 @@ s0.parentNode.insertBefore(s1,s0);
           <a href="https://appslocked.com/cl/i/8d8nr3" class="bg-pink-500 text-white py-2 px-4 rounded-full text-lg font-semibold hover:bg-pink-600 transition free-button" aria-label="Get Meal Prep Magic E-book">Free</a>
         </div>
         <div class="ebook-card p-6 text-center">
-          <img src="pdf3.jpg" alt="YOUR SIMPLE GUIDE TO
-HEALTHY WEIGHT LOSS" loading="lazy">
-          <h3 class="text-xl font-semibold text-green-800 mb-2">YOUR SIMPLE GUIDE TO
-HEALTHY WEIGHT LOSS</h3>
+          <img src="pdf3.jpg" alt="YOUR SIMPLE GUIDE TO HEALTHY WEIGHT LOSS" loading="lazy">
+          <h3 class="text-xl font-semibold text-green-800 mb-2">YOUR SIMPLE GUIDE TO HEALTHY WEIGHT LOSS</h3>
           <p class="text-gray-600 mb-4">Cognitive strategies to stay motivated, grounded in behavioral science.</p>
           <a href="https://appslocked.com/cl/i/8d8nr3" class="bg-pink-500 text-white py-2 px-4 rounded-full text-lg font-semibold hover:bg-pink-600 transition free-button" aria-label="Get Mindset Mastery E-book">Free</a>
         </div>
@@ -325,7 +369,6 @@ HEALTHY WEIGHT LOSS</h3>
           <p class="text-lg text-gray-600">100% Satisfaction Guarantee</p>
         </div>
       </div>
-    
     </div>
   </section>
 
@@ -354,13 +397,9 @@ HEALTHY WEIGHT LOSS</h3>
     </div>
   </section>
 
-  <!-- Sticky CTA -->
-
-
   <!-- Footer -->
   <footer class="bg-green-800 text-white py-8 text-center">
     <p>© 2025 Healthy Lose Steps. All rights reserved. Not medical advice; consult a doctor before starting any weight loss plan. Data sourced from USDA, CDC.</p>
-
   </footer>
 
   <!-- Owl Carousel JS -->
@@ -391,6 +430,14 @@ HEALTHY WEIGHT LOSS</h3>
       }, 1000);
     }
     startCountdown();
+
+    // Hamburger Menu Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
     // Initialize Owl Carousel for Testimonials
     $('.testimonial-slider').owlCarousel({
       loop: true,
