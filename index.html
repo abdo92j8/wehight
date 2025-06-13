@@ -7,6 +7,18 @@
     (function(){
       var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
       s1.async=true;
+      s1.src='https://embed.tawk.to/680fca173aab2b190ea274explainer: Here's the updated HTML file with enhanced dropdown menu animations and click-to-close functionality:
+
+<xaiArtifact artifact_id="0e109b34-d49e-4a4f-8a6d-be528ec6aea3" artifact_version_id="19a862e6-1b6f-430c-86a0-e0f4274096fe" title="index.html" contentType="text/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
       s1.src='https://embed.tawk.to/680fca173aab2b190ea274bc/1ipuqqrlc';
       s1.charset='UTF-8';
       s1.setAttribute('crossorigin','*');
@@ -76,6 +88,7 @@
       opacity: 0.3;
       z-index: -1;
       mix-blend-mode: overlay;
+ Six
     }
 
     .grain-filter {
@@ -132,7 +145,7 @@
     .nav-menu {
       display: flex;
       gap: 1.5rem;
-      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
 
     .nav-menu a {
@@ -197,6 +210,8 @@
         padding: 1rem;
         max-height: 0;
         opacity: 0;
+        transform: scaleY(0.95);
+        transform-origin: top;
         overflow: hidden;
         border-bottom: 2px solid #e1f5e9;
       }
@@ -205,6 +220,7 @@
         display: flex;
         max-height: 500px;
         opacity: 1;
+        transform: scaleY(1);
       }
 
       .nav-menu a {
@@ -213,6 +229,14 @@
         padding: 1rem;
         border-bottom: 1px solid #e1f5e9;
         color: #2e7d32;
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      .nav-menu.active a {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
       }
 
       .nav-menu a:hover {
@@ -491,6 +515,25 @@
     hamburger.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       hamburger.classList.toggle('active');
+      if (navMenu.classList.contains('active')) {
+        gsap.from('.nav-menu.active a', {
+          opacity: 0,
+          y: -10,
+          duration: 0.2,
+          stagger: 0.05,
+          ease: 'power2.out'
+        });
+      }
+    });
+
+    // Close Menu on Outside Click
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('active') && 
+          !navMenu.contains(e.target) && 
+          !hamburger.contains(e.target)) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+      }
     });
 
     // Initialize Owl Carousel for Testimonials
